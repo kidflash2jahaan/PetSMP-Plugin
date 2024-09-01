@@ -1,0 +1,12 @@
+name: PetSMP-Plugin
+version: '1.0'
+main: com.systemerr.petsmp.Main
+api-version: '1.21'
+
+commands:
+  howtoplay:
+    description: How to Play
+    usage: /<command>
+#  pets:
+#    description: View all pets!
+#    usage: /<command> <player>

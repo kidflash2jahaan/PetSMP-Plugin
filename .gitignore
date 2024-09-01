@@ -113,5 +113,4 @@ buildNumber.properties
 run/
 
 
-# Testing server
-server
+/server/
