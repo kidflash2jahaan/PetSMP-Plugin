@@ -17,7 +17,7 @@ import java.util.Random;
 public class Utils {
     public static final Random random = new Random(Objects.requireNonNull(Bukkit.getWorld("world")).getSeed());
     public static final int loopDelay = toTicks(1);
-    public static final String api = "localhost:8080";
+    public static final String api = "api.systemerr.com";
 
     private static final Logger log = LoggerFactory.getLogger(Utils.class);
 
@@ -31,7 +31,15 @@ public class Utils {
 
     public static String howToPlay() {
         try {
-            return HttpClient.newHttpClient().send(HttpRequest.newBuilder(URI.create("http://%s/petsmp/howtoplay".formatted(api))).GET().build(), HttpResponse.BodyHandlers.ofString()).body();
+            return HttpClient.newHttpClient().send(HttpRequest.newBuilder(URI.create("https://%s/petsmp/howtoplay".formatted(api))).GET().build(), HttpResponse.BodyHandlers.ofString()).body();
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static String partnerships() {
+        try {
+            return HttpClient.newHttpClient().send(HttpRequest.newBuilder(URI.create("https://%s/petsmp/partnerships".formatted(api))).GET().build(), HttpResponse.BodyHandlers.ofString()).body();
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }

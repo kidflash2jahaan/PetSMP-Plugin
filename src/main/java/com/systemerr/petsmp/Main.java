@@ -22,6 +22,7 @@ public final class Main extends JavaPlugin implements Listener {
         Bukkit.getWorlds().forEach(world -> world.getWorldBorder().setSize(5000));
 
         Objects.requireNonNull(this.getCommand("howtoplay")).setExecutor(new HowToPlay());
+        Objects.requireNonNull(this.getCommand("partnerships")).setExecutor(new Partnerships());
 //        Objects.requireNonNull(this.getCommand("pets")).setExecutor(new PetsCommand());
         
         log.info("PetSMP Plugin Enabled!");

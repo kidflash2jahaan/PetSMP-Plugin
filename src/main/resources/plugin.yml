@@ -7,6 +7,9 @@ commands:
   howtoplay:
     description: How to Play
     usage: /<command>
+  partnerships:
+    description: Partnership
+    usage: /<command>
 #  pets:
 #    description: View all pets!
 #    usage: /<command> <player>
